@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Program
 {
@@ -10,7 +10,6 @@ class Program
         Enemy e1 = new Enemy(50, 20, "ogre");
         Enemy e2 = new Enemy(30, 15, "ghast");
         Enemy e3 = new Enemy(20, 10, "goblin");
-
         while(true)
         {
             if (!(p.health > 0))
@@ -27,9 +26,8 @@ class Program
             YourTurn(p, e1, e2, e3);
             EnemyTurn(p ,e1 ,e2 ,e3);
         }
-
     }
-
+	//=====================================================================================
     static float Difficulty()
     {
         float d;
@@ -37,7 +35,7 @@ class Program
         Console.WriteLine("1. easy");
         Console.WriteLine("2. normal");
         Console.WriteLine("3. hard");
-       int dif=Convert.ToInt32(Console.ReadLine());
+        int dif=Convert.ToInt32(Console.ReadLine());
         switch (dif)
         {
             case 1:
@@ -55,7 +53,7 @@ class Program
         }
         return d;
     }
-
+	//=====================================================================================
     static void Standby(Player player,Enemy enemy1,Enemy enemy2,Enemy enemy3)
     {
         Console.WriteLine("\n--------------");
@@ -65,7 +63,7 @@ class Program
         Console.WriteLine("goblin health : " + (enemy3.health > 0 ? enemy3.health : 0));
         Console.WriteLine("--------------\n");
     }
-
+	//=====================================================================================
     static void YourTurn(Player player, Enemy enemy1, Enemy enemy2, Enemy enemy3)
     {
         Console.WriteLine("what do you want to do?");
@@ -94,9 +92,8 @@ class Program
                 player.health += 25;
                 break;
         }
-
-        
     }
+	//=====================================================================================
     static void EnemyTurn(Player player, Enemy enemy1, Enemy enemy2, Enemy enemy3)
     {
         if (enemy1.health > 0)
@@ -117,8 +114,7 @@ class Program
         Console.WriteLine("--------------");
     }
 }
-
-
+//####################################################################################
 class Player
 {
     public int health;
@@ -129,7 +125,7 @@ class Player
         attackDamage =(int) (dif * d);
     }
 }
-
+//####################################################################################
 class Enemy
 {
     public int health;
@@ -141,5 +137,4 @@ class Enemy
         health = h;
         attackDamage = d;
     }
-
 }
